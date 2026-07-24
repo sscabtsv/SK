@@ -24,7 +24,6 @@ jobs:
         uses: geode-sdk/build-geode-mod@main
         with:
           target: ${{ matrix.target }}
-          bindings: latest
           combine: true
 
       - name: Upload build artifact
