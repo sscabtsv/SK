@@ -11,7 +11,7 @@ protected:
     cocos2d::CCLabelBMFont* m_headerLabel = nullptr;
     geode::ScrollLayer* m_scrollLayer = nullptr;
     cocos2d::extension::CCScale9Sprite* m_panelBg = nullptr;
-    cocos2d::CCMenuItemSpriteExtra* m_headerButton = nullptr;
+    CCMenuItemSpriteExtra* m_headerButton = nullptr;
     std::function<void(std::string)> m_onSelect;
     std::string m_selected;
     bool m_open = false;
