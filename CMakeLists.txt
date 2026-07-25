@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.21)
 
-if (NOT ANDROID)
-    message(FATAL_ERROR "ShowcaseKit only targets Android32/Android64. Configure with the Android NDK toolchain (-DCMAKE_TOOLCHAIN_FILE=.../android.toolchain.cmake).")
-endif()
-
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(ShowcaseKit VERSION 1.0.0)
+
+if (NOT ANDROID)
+    message(FATAL_ERROR "ShowcaseKit only targets Android32/Android64. Configure with the Android NDK toolchain (-DCMAKE_TOOLCHAIN_FILE=.../android.toolchain.cmake).")
+endif()
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
