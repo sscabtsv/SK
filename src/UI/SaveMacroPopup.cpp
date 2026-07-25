@@ -8,15 +8,18 @@ namespace showcasekit {
 
 SaveMacroPopup* SaveMacroPopup::create(std::function<void(std::string)> callback) {
     auto ret = new SaveMacroPopup();
-    if (ret && ret->initAnchored(240.f, 140.f, callback)) {
+    if (ret->init(std::move(callback))) {
         ret->autorelease();
         return ret;
     }
-    CC_SAFE_DELETE(ret);
+    delete ret;
     return nullptr;
 }
 
-bool SaveMacroPopup::setup(std::function<void(std::string)> callback) {
+bool SaveMacroPopup::init(std::function<void(std::string)> callback) {
+    if (!Popup::init(240.f, 140.f))
+        return false;
+
     m_callback = std::move(callback);
     this->setTitle("Save Macro");
 
