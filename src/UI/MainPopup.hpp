@@ -6,11 +6,11 @@
 
 namespace showcasekit {
 
-class MainPopup : public geode::Popup<> {
+class MainPopup : public geode::Popup {
 protected:
     MacroTab* m_macroTab = nullptr;
 
-    bool setup() override;
+    bool init();
 
 public:
     static MainPopup* create();
