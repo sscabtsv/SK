@@ -7,12 +7,12 @@
 
 namespace showcasekit {
 
-class SaveMacroPopup : public geode::Popup<std::function<void(std::string)>> {
+class SaveMacroPopup : public geode::Popup {
 protected:
     geode::TextInput* m_input = nullptr;
     std::function<void(std::string)> m_callback;
 
-    bool setup(std::function<void(std::string)> callback) override;
+    bool init(std::function<void(std::string)> callback);
     void onConfirm(cocos2d::CCObject*);
 
 public:
