@@ -9,12 +9,12 @@ namespace showcasekit {
 class MacroTab : public cocos2d::CCLayer {
 protected:
     cocos2d::CCMenu* m_menu = nullptr;
-    cocos2d::CCMenuItemToggler* m_recordToggle = nullptr;
-    cocos2d::CCMenuItemToggler* m_playToggle = nullptr;
+    CCMenuItemToggler* m_recordToggle = nullptr;
+    CCMenuItemToggler* m_playToggle = nullptr;
     cocos2d::CCLabelBMFont* m_statusLabel = nullptr;
     FileDropdown* m_dropdown = nullptr;
 
-    cocos2d::CCMenuItemToggler* m_showcaseToggle = nullptr;
+    CCMenuItemToggler* m_showcaseToggle = nullptr;
     geode::TextInput* m_attemptsInput = nullptr;
     geode::TextInput* m_minProgressInput = nullptr;
     geode::TextInput* m_maxProgressInput = nullptr;
