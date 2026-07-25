@@ -20,7 +20,8 @@ class $modify(SKPauseLayerHook, PauseLayer) {
         );
 
         if (!sprite) {
-            sprite = CircleButtonSprite::create("GJ_infoIcon_001.png");
+            auto fallbackIcon = CCSprite::createWithSpriteFrameName("GJ_infoIcon_001.png");
+            sprite = CircleButtonSprite::create(fallbackIcon);
         }
 
         auto btn = CCMenuItemSpriteExtra::create(
