@@ -8,15 +8,18 @@ namespace showcasekit {
 
 MainPopup* MainPopup::create() {
     auto ret = new MainPopup();
-    if (ret && ret->initAnchored(theme::kPopupWidth, theme::kPopupHeight)) {
+    if (ret->init()) {
         ret->autorelease();
         return ret;
     }
-    CC_SAFE_DELETE(ret);
+    delete ret;
     return nullptr;
 }
 
-bool MainPopup::setup() {
+bool MainPopup::init() {
+    if (!Popup::init(theme::kPopupWidth, theme::kPopupHeight))
+        return false;
+
     this->setTitle("ShowcaseKit");
 
     auto size = m_mainLayer->getContentSize();
